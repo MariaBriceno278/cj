@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AsignacionController;
+use App\Http\Controllers\RolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $nombre ="Jorge";
+    return view('contacto');
+});
+
+
+Route::resource('rols', [RolController::class])->names('rols');
+
+
+Route::get('/prueba', function () {
+
+    $nombre ="Jorge";
+    return view('home');
 });
